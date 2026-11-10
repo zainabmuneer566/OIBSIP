@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Temperature Converter</h1>
+    <p class="intro">Enter a temperature, choose its unit, and see it in all three scales.</p>
+
+    <form id="converter" novalidate>
+      <label for="temp">Temperature value</label>
+      <input id="temp" type="text" inputmode="decimal" autocomplete="off"
+             placeholder="e.g. 25 or -40.5" aria-describedby="error">
+      <p id="error" class="error" role="alert" aria-live="polite"></p>
+
+      <label for="unit">Convert from</label>
+      <select id="unit">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+        <option value="K">Kelvin (K)</option>
+      </select>
+
+      <button type="submit">Convert</button>
+    </form>
+
+    <section id="results" class="results" aria-live="polite" hidden>
+      <h2>Results</h2>
+      <div class="row"><span>Celsius</span><strong id="out-C">–</strong></div>
+      <div class="row"><span>Fahrenheit</span><strong id="out-F">–</strong></div>
+      <div class="row"><span>Kelvin</span><strong id="out-K">–</strong></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

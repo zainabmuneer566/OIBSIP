@@ -1,0 +1,101 @@
+:root {
+  --bg: #eef3f6;
+  --card: #ffffff;
+  --ink: #17313f;
+  --muted: #5c7380;
+  --line: #cfdde5;
+  --accent: #0b6e8a;
+  --accent-dark: #084f64;
+  --error: #b3261e;
+  --error-bg: #fdecea;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1d25;
+    --card: #162832;
+    --ink: #e6f1f6;
+    --muted: #9bb3c0;
+    --line: #2c4655;
+    --accent: #4fb8d6;
+    --accent-dark: #7fd0e6;
+    --error: #ffb4ab;
+    --error-bg: #3a1d1b;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+.card {
+  width: 100%;
+  max-width: 26rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+h1 { margin: 0 0 .4rem; font-size: 1.6rem; text-align: center; }
+h2 { margin: 0 0 .75rem; font-size: 1.05rem; }
+.intro { margin: 0 0 1.5rem; text-align: center; color: var(--muted); }
+label { display: block; margin: 1rem 0 .35rem; font-weight: 600; }
+input, select {
+  width: 100%;
+  padding: .7rem .8rem;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+}
+input:focus, select:focus, button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+}
+input.invalid { border-color: var(--error); }
+.error {
+  min-height: 1.3rem;
+  margin: .4rem 0 0;
+  color: var(--error);
+  font-size: .92rem;
+}
+.error:not(:empty) {
+  background: var(--error-bg);
+  padding: .45rem .6rem;
+  border-radius: 6px;
+}
+button {
+  width: 100%;
+  margin-top: 1.4rem;
+  padding: .8rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent-dark);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+@media (prefers-color-scheme: dark) { button { color: #08202a; } }
+button:hover { filter: brightness(1.1); }
+.results {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: .6rem 0;
+  border-bottom: 1px dashed var(--line);
+}
+.row:last-child { border-bottom: 0; }
+.row strong { font-variant-numeric: tabular-nums; }
